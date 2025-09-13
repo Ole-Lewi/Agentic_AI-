@@ -1,0 +1,49 @@
+
+Machine Learning Notes
+
+1. Definition:
+Machine Learning (ML) is a subset of Artificial Intelligence (AI) that enables systems to learn patterns from data and make predictions or decisions without being explicitly programmed.
+
+2. Types of Machine Learning:
+- Supervised Learning: Uses labeled data (e.g., classification, regression).
+- Unsupervised Learning: Uses unlabeled data to find hidden patterns (e.g., clustering, dimensionality reduction).
+- Reinforcement Learning: Learns by interacting with an environment, receiving rewards or penalties.
+
+3. Key Algorithms:
+- Linear Regression, Logistic Regression
+- Decision Trees, Random Forests
+- Support Vector Machines (SVM)
+- K-Nearest Neighbors (KNN)
+- Naive Bayes
+- Neural Networks, Deep Learning
+- K-Means Clustering, DBSCAN, PCA
+
+4. Applications:
+- Image Recognition (Computer Vision)
+- Natural Language Processing (Chatbots, Sentiment Analysis)
+- Recommendation Systems (Netflix, Amazon)
+- Fraud Detection
+- Predictive Analytics in Healthcare and Finance
+
+5. Important Concepts:
+- Overfitting vs Underfitting
+- Training, Validation, Test datasets
+- Feature Engineering
+- Gradient Descent
+- Hyperparameter Tuning
+- Bias-Variance Tradeoff
+
+6. Tools & Libraries:
+- Python (Scikit-learn, TensorFlow, PyTorch)
+- Data handling: Pandas, NumPy
+- Visualization: Matplotlib, Seaborn
+
+7. Workflow:
+1. Data Collection
+2. Data Preprocessing
+3. Model Selection
+4. Training the Model
+5. Evaluation
+6. Deployment
+
+--- END OF NOTES ---

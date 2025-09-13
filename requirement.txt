@@ -1,0 +1,7 @@
+faiss-cpu
+torch
+sentence-transformers
+langchain
+langchain-groq
+python-dotenv
+groq
