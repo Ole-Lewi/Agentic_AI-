@@ -11,10 +11,10 @@ from langchain_community.embeddings import HuggingFaceEmbeddings
 # Set up embedding model
 device = (
     "cuda" if torch.cuda.is_available()
-    else "mps" if torch.backends.mps.is_available()
+    else "mps" if torch.backends.mps.is_available() #
     else "cpu"
 )
-embeddings = HuggingFaceEmbeddings(
+embeddings = HuggingFaceEmbeddings(   
     model_name="sentence-transformers/all-MiniLM-L6-v2",
     model_kwargs={"device": device},
 )
@@ -28,19 +28,19 @@ def load_research_publications(documents_path):
         if file.endswith(".txt"):
             file_path = os.path.join(documents_path, file)
             try:
-                loader = TextLoader(file_path)
+                loader = TextLoader(file_path)  # Using TextLoader for .txt files
                 docs = loader.load()
                 documents.extend(docs)
                 print(f"Successfully loaded: {file}")
-            except Exception as e:
+            except Exception as e:  # Catch and log errors
                 print(f"Error loading {file}: {str(e)}")
 
     print(f"\nTotal documents loaded: {len(documents)}")
     return documents
 
 
-# Chunking
-def chunk_documents(documents):
+# Chunking - splitting documents into manageable pieces
+def chunk_documents(documents): 
     """Split documents into chunks"""
     text_splitter = RecursiveCharacterTextSplitter(
         chunk_size=1000,
@@ -50,7 +50,7 @@ def chunk_documents(documents):
     return text_splitter.split_documents(documents)
 
 
-# Store chunks into FAISS
+# Store chunks into FAISS 
 def build_faiss_index(chunks, embeddings, index_path="faiss_index"):
     """Build and save FAISS index"""
     vectorstore = FAISS.from_documents(chunks, embeddings)
@@ -58,7 +58,7 @@ def build_faiss_index(chunks, embeddings, index_path="faiss_index"):
     return vectorstore
 
 
-# Intelligent retrieval
+# Intelligent retrieval - searching the FAISS index
 def search_research_db(query, vectorstore, top_k=5):
     """Search FAISS index for relevant chunks"""
     results = vectorstore.similarity_search_with_score(query, k=top_k)
